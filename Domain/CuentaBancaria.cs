@@ -17,7 +17,7 @@ public abstract class CuentaBancaria
         if (saldo < 0)
             throw new SaldoInicialInvalidoException();
 
-        if (titulares == null || titulares.Length == 0)
+        if (titulares == null || titulares.All(s=> string.IsNullOrEmpty(s)))
             throw new TitularesInvalidosException();
         Numero = numero;
         Saldo = saldo;

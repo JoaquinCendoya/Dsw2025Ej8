@@ -16,7 +16,7 @@ namespace Dsw2025Ej8.Persistencia
 
             try
             {
-                var caja1 = new CajaAhorro("CA001", 1000, new[] { "Ana" })
+                var caja1 = new CajaAhorro("CA001", 1000m, new[] { "Ana" })
                 { TasaDeInteres = 0.05m };
                 cuentas.Add(caja1);
             }
@@ -58,17 +58,40 @@ namespace Dsw2025Ej8.Persistencia
                 Console.WriteLine($"Error al crear cuenta cuenta corriente: {ex.Message}");
             }
 
-            // Cuenta invalida para probar excepciones
+            // Cuentas invalidas para probar excepciones
             try
             {
-                var cc3 = new CuentaCorriente("", -100m, new[] { "" })
+                var cc3 = new CuentaCorriente("", 100m, new[] { "Juliano" })
                 { Comision = 0.03m, LimiteDeDescubierto = 200m };
                 cuentas.Add(cc3);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al crear cuenta invalida: {ex.Message}");
+                Console.WriteLine($"Error al crear cuenta cuenta corriente: {ex.Message}");
             }
+
+            try
+            {
+                var cc4 = new CuentaCorriente("CC004", -100m, new[] { "Joaquin" })
+                { Comision = 0.03m, LimiteDeDescubierto = 200m };
+                cuentas.Add(cc4);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear cuenta cuenta corriente: {ex.Message}");
+            }
+
+            try
+            {
+                var cc5 = new CuentaCorriente("CC005", 1000m, new[] { "" })
+                { Comision = 0.03m, LimiteDeDescubierto = 200m };
+                cuentas.Add(cc5);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear cuenta cuenta corriente: {ex.Message}");
+            }
+
 
             return cuentas;
         }
