@@ -23,5 +23,23 @@ namespace Dsw2025Ej8.Domain
         {
             public SaldoInsuficienteException(string numeroCuenta) : base($"La cuenta {numeroCuenta} no cuenta con saldo para la operación solicitada. Fue suspendida.") { }
         }
+
+        public class NumeroCuentaInvalidoException : Exception
+        {
+            public NumeroCuentaInvalidoException()
+                : base("El numero de cuenta no puede estar vacio o nulo") { }
+        }
+
+        public class SaldoInicialInvalidoException : Exception
+        {
+            public SaldoInicialInvalidoException()
+                : base("El saldo inicial no puede ser negativo") { }
+        }
+
+        public class TitularesInvalidosException : Exception
+        {
+            public TitularesInvalidosException()
+                : base("La lista de titulares no puede ser nula o vacia") { }
+        }
     }
 }

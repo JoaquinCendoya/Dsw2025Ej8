@@ -11,6 +11,14 @@ public abstract class CuentaBancaria
 
     protected CuentaBancaria(string numero, decimal saldo, string[] titulares)
     {
+        if (string.IsNullOrWhiteSpace(numero))
+            throw new NumeroCuentaInvalidoException();
+
+        if (saldo < 0)
+            throw new SaldoInicialInvalidoException();
+
+        if (titulares == null || titulares.Length == 0)
+            throw new TitularesInvalidosException();
         Numero = numero;
         Saldo = saldo;
         Titulares = titulares;
