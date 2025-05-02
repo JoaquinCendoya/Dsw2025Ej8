@@ -1,7 +1,6 @@
-# Ejercicio N° 8
-## Desarrollo de Software
-### Herencia y propiedades
+Desarrollo de Software
+Ejercicio NÂ° 8
 
 Integrantes:
-Cendoya Joaquin 56797 3k3
-Suarez Camila Rosario 58143 3k3
+58143 - Suarez, Camila Rosario - Camila.Suarez@alu.frt.utn.edu.ar
+56797 - Cendoya, Joaquin - joaquincendoya1@gmail.com
